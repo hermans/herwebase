@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (c) 2025 hermans@taktikspace.com
+ * Copyright (c) 2025 hermans [at] taktikspace.com
  */
 
 ini_set('display_errors', '1');

@@ -4,6 +4,9 @@ herwebase is project template that use Yii3 components, it use Yii1 project stru
 - Repository: https://github.com/hermans/herwebase
 - This project create and maintenance by hermans [at] taktikspace.com
 
+Running Test:
+php -S localhost:8000 -t web
+
 ![Alt text](doc/example1.png)
 
 

@@ -1,25 +1,34 @@
 <?php
 
+/**
+ * Copyright (c) 2025 hermans [at] taktikspace.com
+ * 
+ * Route definitions
+ *
+ * Usage:
+ * Each route is defined as:
+ *   'path' => [ControllerClass::class, 'method']
+ *     → Defaults to GET
+ *
+ * To specify HTTP method explicitly (e.g. POST, PUT), use:
+ *   'path' => ['method', ControllerClass::class, 'method']
+ *     → method must be lowercase: 'post', 'put', 'delete', etc.
+ *
+ * Examples:
+ *   '/'        => [SiteController::class, 'index']              // GET
+ *   '/submit'  => ['post', FormController::class, 'submit']     // POST
+ *   '/update'  => ['put', FormController::class, 'update']      // PUT
+ */
+
+use App\Components\Helpers;
 use App\Controllers\SiteController;
 
-$app->get('/', function ($request, $response) use ($container) {
-    $controller = $container->get(SiteController::class);
-    $html = $controller->index();
-    $response->getBody()->write($html);
-    return $response;
-});
+Helpers::$container = $app->getContainer();
 
-
-$app->get('/about', function ($request, $response) use ($container) {
-    $controller = $container->get(SiteController::class);
-    $html = $controller->about();
-    $response->getBody()->write($html);
-    return $response;
-});
-
-$app->get('/contact', function ($request, $response) use ($container) {
-    $controller = $container->get(SiteController::class);
-    $html = $controller->contact();
-    $response->getBody()->write($html);
-    return $response;
-});
+Helpers::Routes($app, [
+    '/'        => [SiteController::class, 'index'],
+    '/about'   => [SiteController::class, 'about'],
+    '/contact' => [SiteController::class, 'contact'],
+    //'/submit'  => ['post', FormController::class, 'submit'],    // POST
+    //'/update'  => ['put', FormController::class, 'update'],     // PUT
+]);
