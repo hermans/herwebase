@@ -1,6 +1,7 @@
 <?php
 /**
  * Copyright (C) 2025 by hermans [at] taktikspace.com
+ * https://github.com/hermans/herwebase
  */
 
 namespace App\Components;

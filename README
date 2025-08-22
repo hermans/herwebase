@@ -1,12 +1,22 @@
-herwebase is project template that use Yii3 components, it use Yii1 project structures. This is experiment project.
+# 🧪 herwebase
 
+**herwebase** is an experimental PHP project template that combines **Slimphp**  and **Yii3 components** with a legacy-friendly **Yii1-style structure**. It’s designed for developers who want modern architecture with explicit wiring, reproducible flows, and familiar scaffolding.
 
-- Repository: https://github.com/hermans/herwebase
-- This project create and maintenance by hermans [at] taktikspace.com
+- 🔗 **Repository**: [github.com/hermans/herwebase](https://github.com/hermans/herwebase)
+- 🛠️ **Created by**: hermans [at] taktikspace.com
 
-Running Test:
+---
+
+## 🚀 Quick Start
+
+To run the project using PHP’s built-in server:
+
+```bash
 php -S localhost:8000 -t web
 
+> ⚠️ **Routing Note**  
+> If you're not using `php -S`, make sure to enable `.htaccess` in the `web/` directory and configure routing in `app/config/web.php` to ensure routes and assets work correctly.
+```
+
+Example view:
 ![Alt text](doc/example1.png)
-
-
