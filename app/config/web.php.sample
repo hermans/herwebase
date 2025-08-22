@@ -1,0 +1,9 @@
+<?php
+return [
+    // Set 'basePath' to match the subdirectory where your app is served.
+    // Example: If your app is accessed via http://localhost/herwebase/web/,
+    // then use '/herwebase/web' as the basePath.
+    //
+    // Leave it blank ('') only if your app is served from the web root (e.g. http://localhost/)
+    'basePath' =>  dirname($_SERVER['SCRIPT_NAME']), // '/herwebase/web',
+];

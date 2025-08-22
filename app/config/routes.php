@@ -20,12 +20,13 @@
  *   '/update'  => ['put', FormController::class, 'update']      // PUT
  */
 
-use App\Components\Helpers;
+use App\Components\Route;
 use App\Controllers\SiteController;
 
-Helpers::$container = $app->getContainer();
+$container = $app->getContainer();
+$route = $container->get(Route::class);
 
-Helpers::Routes($app, [
+$route->mapRoutes($app, [
     '/'        => [SiteController::class, 'index'],
     '/about'   => [SiteController::class, 'about'],
     '/contact' => [SiteController::class, 'contact'],

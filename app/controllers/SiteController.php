@@ -2,7 +2,6 @@
 namespace App\Controllers;
 
 use App\Components\Controller;
-use Yiisoft\View\WebView;
 
 class SiteController extends Controller
 {

@@ -1,0 +1,6 @@
+RewriteEngine On
+# Set the base path (adjust if your app is deeper)
+RewriteBase /taktikone/heryii-skeleton/web/
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [QSA,L]
