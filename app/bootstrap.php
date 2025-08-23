@@ -9,16 +9,19 @@ ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
-use App\Components\Helpers;
-use App\Components\Route;
 use DI\Container;
 use Slim\Factory\AppFactory;
 use Yiisoft\Aliases\Aliases;
 use Yiisoft\View\WebView;
+use App\Components\Helpers;
+use App\Components\Route;
+use App\Middlewares\RequestLogger;
+use App\middlewares\SessionStart;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
 $file_config =  __DIR__ . '/../app/config/web.php';
+
 $config = [];
 if(file_exists($file_config)){
     $config = include $file_config;
@@ -58,11 +61,16 @@ $container->set(WebView::class, function ($container) {
     $view->setParameter('helpers', $helpers);
     $view->setParameter('createUrl', fn($route, $params = []) => $helpers->createUrl($route, $params));
 
-    return $view;
+    return $view;;
 });
 
 // Create Slim app
 $app = AppFactory::create();
+
+$app->add(new SessionStart());
+
+// add request middleware
+$app->add(new RequestLogger());
 
 if (
     isset($config['basePath']) &&
@@ -78,5 +86,9 @@ $container->set('basePath', fn() => $app->getBasePath());
 
 // Routing
 require_once __DIR__ . '/config/routes.php';
+
+// error handling
+(require __DIR__ . '/config/errorHandler.php')($app);
+
 
 $app->run();

@@ -2,6 +2,7 @@
 namespace App\Controllers;
 
 use App\Components\Controller;
+use Psr\Http\Message\ServerRequestInterface;
 
 class SiteController extends Controller
 {
@@ -21,5 +22,24 @@ class SiteController extends Controller
     public function contact(): string
     {
         return $this->render('site/contact');
+    }
+
+    public function date():string
+    {
+        return 'date';
+    }
+
+    public function time():string
+    {
+        return 'time';
+    }
+
+    public function secure(ServerRequestInterface $request):string
+    {
+        
+        if($request->getMethod() == 'POST'){
+            return 'result from post method';
+        }
+        return 'secure page';
     }
 }

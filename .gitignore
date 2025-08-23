@@ -1,3 +1,5 @@
 /vendor/*
 /app/config/web.php
-/.htaccess
+/web/.htaccess
+/custom/*
+NOTE

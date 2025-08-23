@@ -29,6 +29,9 @@ use Yiisoft\Html\Html;
                     <li class="nav-item">
                         <a class="nav-link" href="<?= $helpers->createUrl('/contact') ?>">Contact</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= $helpers->createUrl('/account') ?>">Account</a>
+                    </li>
                 </ul>
             </div>
         </div>
