@@ -61,7 +61,7 @@ $container->set(WebView::class, function ($container) {
     $view->setParameter('helpers', $helpers);
     $view->setParameter('createUrl', fn($route, $params = []) => $helpers->createUrl($route, $params));
 
-    return $view;;
+    return $view;
 });
 
 // Create Slim app

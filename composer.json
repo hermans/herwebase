@@ -21,7 +21,9 @@
         "slim/psr7": "^1.7",
         "php-di/php-di": "^7.1",
         "yiisoft/yii-view-renderer": "^7.3",
-        "slim/csrf": "^1.5"
+        "slim/csrf": "^1.5",
+        "yiisoft/error-handler": "^4.2",
+        "yiisoft/session": "^3.0"
     },
     "config": {
         "allow-plugins": {
